@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="learning.mybatis.data.CityMapper">
+  <select id="selectCity" resultType="learning.mybatis.model.City">
+    select * from city where ID = #{ID}
+  </select>
+
+  <insert id="insertCity" useGeneratedKeys="true" keyProperty="ID">
+    insert into city (Name, CountryCode, District, Population)
+    values (#{name}, #{countryCode}, #{district}, #{population})
+  </insert>
+</mapper>
